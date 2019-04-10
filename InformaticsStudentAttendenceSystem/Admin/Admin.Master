@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="InformaticsStudentAttendenceSystem.Admin.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="Admin.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="aheader">
+       
+        <asp:Image ID="Image1" runat="server" ImageUrl="~/assets/images/admin/admin.png" Height="113px" Width="561px" />
+       
+    </div>
+    <div id="main">
+    <div id="menu">
+        <table class="tbl">
+            <tr>
+                <td class="tblhead">
+                    <asp:Image ID="Image2" runat="server" ImageUrl="~/assets/images/admin/Avatar.png" Height="50px" Width="50px" />
+                    <br />
+                    <asp:Label ID="lblAdminDetails" runat="server" Text="Label" ForeColor="White"></asp:Label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID="Button1" runat="server" CssClass="btnmenu" 
+                        Text="ADD Staff" PostBackUrl="~/Admin/AddStaff.aspx" />
+                </td>
+            </tr>
+            <tr>
+                <td >
+                    <asp:Button ID="Button2" runat="server" CssClass="btnmenu" 
+                        Text="View Staff" PostBackUrl="~/Admin/ViewStaff.aspx" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <asp:Button ID="Button3" runat="server" CssClass="btnmenu" Text="View Student" 
+                        PostBackUrl="~/Admin/ViewStudent.aspx" />
+                </td>
+            </tr>
+            <tr>
+                <td >
+                    <asp:Button ID="Button10" runat="server" CssClass="btnmenu" Text="Staff Report" 
+                        PostBackUrl="~/Admin/StaffReport.aspx" />
+                </td>
+            </tr>
+            <%--<tr>
+                <td >
+                    <asp:Button ID="Button4" runat="server" CssClass="btnmenu" Text="Complain" 
+                        PostBackUrl="~/Admin/Complain.aspx" />
+                </td>
+            </tr>
+            <tr>
+                <td >
+                    <asp:Button ID="Button5" runat="server" CssClass="btnmenu" Text="Leave" 
+                        PostBackUrl="~/Admin/Message.aspx" />
+                </td>
+            </tr>--%>
+            <tr>
+                <td>
+                    <asp:Button ID="Button6" runat="server" CssClass="btnmenu" 
+                        Text="Student Reports" PostBackUrl="~/Admin/StudentReport.aspx" />
+                </td>
+            </tr>
+            <%--<tr>
+                <td>
+                    <asp:Button ID="Button8" runat="server" CssClass="btnmenu" Text="Feed Back" 
+                        PostBackUrl="~/Admin/feedback.aspx" />
+                </td>
+            </tr>--%>
+            <tr>
+                <td>
+                    <asp:Button ID="btnLogout" runat="server" CssClass="btnmenu" Text="LogOut" 
+                         OnClick="btnLogout_Click" />
+                </td>
+            </tr>
+        </table>
+        </div>
+        <div id="cnt"><asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder></div>
+        </div>
+    </form>
+</body>
+</html>
