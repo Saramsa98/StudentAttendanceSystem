@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 
 namespace InformaticsStudentAttendenceSystem.Admin
@@ -19,7 +20,7 @@ namespace InformaticsStudentAttendenceSystem.Admin
 
         protected void btnlogin_Click(object sender, EventArgs e)
         {
-            using (SqlConnection sqlCon = new SqlConnection(@"Data Source=LAPTOP-LQOFE7MO\SQLEXPRESS;Initial Catalog=AttendanceSystem_Database;Integrated Security=True;"))
+            using (SqlConnection sqlCon = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnectionString"].ConnectionString))
             {
                 string query = "Select COUNT(1) from tblAdmin where username=@username and password=@password";
                 SqlCommand sqlcmd = new SqlCommand(query, sqlCon);

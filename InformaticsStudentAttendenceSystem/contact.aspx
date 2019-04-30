@@ -3,7 +3,7 @@
     <header id="head" class="secondary">
             <div class="container">
                     <h1>Contact Us</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing eliras scele!</p>
+                    <p>Please contact us on following details for further information</p>
                 </div>
     </header>
 
@@ -53,16 +53,16 @@
 								<h3 class="section-title">Office Address</h3>
 								<div class="contact-info">
 									<h5>Address</h5>
-									<p>5th Street, Carl View - United States</p>
+									<p>Hospital Chowk, Lions Building Pokhara</p>
 									
 									<h5>Email</h5>
-									<p>info@webthemez.com</p>
+									<p>info@icp.edu.np</p>
 									
 									<h5>Phone</h5>
-									<p>+09 123 1234 123</p>
+									<p>+977 61 538115</p>
 								</div>
 							</div> 
-						</div> 						
+						</div>						
 					</div>
 				</div>
 			</div>

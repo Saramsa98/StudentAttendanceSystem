@@ -67,15 +67,6 @@ namespace InformaticsStudentAttendenceSystem.Admin {
         protected global::System.Web.UI.WebControls.DropDownList ddlgender;
         
         /// <summary>
-        /// fileuploadImage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fileuploadImage;
-        
-        /// <summary>
         /// txtuname control.
         /// </summary>
         /// <remarks>
@@ -101,6 +92,15 @@ namespace InformaticsStudentAttendenceSystem.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtcpass;
+        
+        /// <summary>
+        /// CompareValidator1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CompareValidator CompareValidator1;
         
         /// <summary>
         /// lbl control.

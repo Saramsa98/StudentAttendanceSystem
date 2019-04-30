@@ -11,7 +11,19 @@ namespace InformaticsStudentAttendenceSystem.Staff
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["username"] == null)
+            {
+                Response.Redirect("~/Staff/staffLogin.aspx");
+               
+            }
+            lblStaffName.Text = "" + Session["username"];
 
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("~/Staff/staffLogin.aspx");
         }
     }
 }

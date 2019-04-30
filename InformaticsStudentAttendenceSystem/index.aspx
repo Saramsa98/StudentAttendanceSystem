@@ -4,8 +4,8 @@
 	<header id="head">
 		<div class="container">
              <div class="heading-text">							
-							<h1 class="animated flipInY delay1">Start Online Education</h1>
-							<p>Free Online education template for elearning and online education institute.</p>
+							<h1 class="animated flipInY delay1">Informatics College Pokhara</h1>
+							<p>Informatics College Pokhara presents online attendance system.</p>
 						</div>
             
 					<div class="fluid_container">                       
@@ -23,7 +23,7 @@
 	</header>
 	<!-- /Header -->
 
-  <div class="container">
+   <div class="container">
     <div class="row">
 					<div class="col-md-3">
 						<div class="grey-box-icon">
@@ -31,8 +31,7 @@
 								<img src="assets/images/1.png" alt="" />
 							</div><!--icon box top -->
 							<h4>Online Courses</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue
-							eset nec lacus elit dor broma.</p>
+							<p>Join us with different online courses.</p>
      						<p><a href="#"><em>Read More</em></a></p>
 						</div><!--grey box -->
 					</div><!--/span3-->
@@ -42,8 +41,7 @@
 								<img src="assets/images/2.png" alt="" />
 							</div><!--icon box top -->
 							<h4>Meet our Staff</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue
-							eset nec lacus elit dor broma.</p>
+							<p>Our very energetic staffs</p>
      						<p><a href="#"><em>Read More</em></a></p>
 						</div><!--grey box -->
 					</div><!--/span3-->
@@ -53,25 +51,23 @@
 								<img src="assets/images/3.png" alt="" />
 							</div><!--icon box top -->
 							<h4>Latest Updates</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue
-							eset nec lacus elit dor broma.</p>
+							<p>New Updates.</p>
      						<p><a href="#"><em>Read More</em></a></p>
 						</div><!--grey box -->
 					</div><!--/span3-->
-					<div class="col-md-3">
+					--<div class="col-md-3">
 						<div class="grey-box-icon">
 							<div class="icon-box-top grey-box-icon-pos">
 								<img src="assets/images/4.png" alt="" />
 							</div><!--icon box top -->
 							<h4>Placements</h4>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus eleifend risus ut congue
-							eset nec lacus elit dor broma.</p>
+							<p>New Staff Placements.</p>
      						<p><a href="#"><em>Read More →</em></a></p>
 						</div><!--grey box -->
 					</div><!--/span3-->
-				</div>
+				</div>-
     </div>
-      <section class="news-box top-margin">
+     <%-- <section class="news-box top-margin">
         <div class="container">
             <h2><span>New Courses</span></h2>
             <div class="row">
@@ -124,29 +120,19 @@
             </div>
         </div>
     </section>
-   
+   --%>
   
 	
       <section class="container">
       <div class="row">
       	<div class="col-md-8"><div class="title-box clearfix "><h2 class="title-box_primary">About Us</h2></div> 
-        <p><span>Perspiciatis unde omnis iste natus error sit voluptatem. Cum sociis natoque penatibus et magnis dis parturient montes ascetur ridiculus musull dui.</span></p>
-        <p>Lorem ipsumulum aenean noummy endrerit mauris. Cum sociis natoque penatibus et magnis dis parturient montes ascetur ridiculus mus. Null dui. Fusce feugiat malesuada odio.</p><p>Lorem ipsumulum aenean noummy endrerit mauris. Cum sociis natoque penatibus et magnis dis parturient montes ascetur ridiculus mus. Null dui. Fusce feugiat malesuada odio.</p>
-        <a href="#" title="read more" class="btn-inline " target="_self">read more</a> </div>
+        <p align ="justify"<span>Informatics College Pokhara, established in 2011 is an associate college of Innovate Nepal Group (ING). Initially, it started its academic journey as a franchisee of Informatics Education Limited, Singapore. Since 2017, Informatics College Pokhara has been directly partnering with London Metropolitan University, UK to provide enviable higher education in IT and Business to students in Pokhara at an affordable price.</span></p>
+        
+        <a href="/about" title="read more" class="btn-inline " target="_self">read more</a> </div>
               
           
-          <div class="col-md-4"><div class="title-box clearfix "><h2 class="title-box_primary">Up Coming Courses</h2></div> 
-            <div class="list styled custom-list">
-            <ul>
-            <li><a title="Snatoque penatibus et magnis dis partu rient montes ascetur ridiculus mus." href="#">Mathematics and Computer Science</a></li>
-            <li><a title="Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus." href="#">Mathematics and Philosophy</a></li>
-            <li><a title="Penatibus et magnis dis parturient montes ascetur ridiculus mus." href="#">Philosophy and Modern Languages</a></li>
-            <li><a title="Morbi nunc odio gravida at cursus nec luctus a lorem. Maecenas tristique orci." href="#">History (Ancient and Modern)</a></li>
-            <li><a title="Snatoque penatibus et magnis dis partu rient montes ascetur ridiculus mus." href="#">Classical Archaeology and Ancient History</a></li>
-            <li><a title="Fusce feugiat malesuada odio. Morbi nunc odio gravida at cursus nec luctus." href="#">Physics and Philosophy</a></li>
-            </ul>
-            </div>
+         
          </div>
-      </div>
+      
       </section>
 </asp:Content>

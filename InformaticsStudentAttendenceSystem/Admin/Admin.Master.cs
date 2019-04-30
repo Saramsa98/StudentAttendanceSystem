@@ -15,7 +15,7 @@ namespace InformaticsStudentAttendenceSystem.Admin
             {
                 Response.Redirect("~/Admin/adminLogin.aspx");
             }
-            lblAdminDetails.Text = "Username: "+ Session["username"];
+            lblAdminDetails.Text = ""+ Session["username"];
         }
 
         

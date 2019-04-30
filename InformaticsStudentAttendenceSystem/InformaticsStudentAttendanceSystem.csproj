@@ -1,0 +1,967 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1530F7CF-0CEE-43B1-8F2E-A7B87ADA1C3D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>InformaticsStudentAttendenceSystem</RootNamespace>
+    <AssemblyName>InformaticsStudentAttendenceSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.5\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="about.aspx" />
+    <Content Include="Admin\AbsentAttendanceReport.aspx" />
+    <Content Include="Admin\AddCoursesByAdmin.aspx" />
+    <Content Include="Admin\AddGroupByAdmin.aspx" />
+    <Content Include="Admin\AddModulesByAdmin.aspx" />
+    <Content Include="Admin\AddStaff.aspx" />
+    <Content Include="Admin\AddStudentsByAdmin.aspx" />
+    <Content Include="Admin\AddTeachersByAdmin.aspx" />
+    <Content Include="Admin\AddYearByAdmin.aspx" />
+    <Content Include="Admin\Admin.css" />
+    <Content Include="Admin\adminLogin.aspx" />
+    <Content Include="Admin\IndividualAttendanceReport.aspx" />
+    <Content Include="Admin\StudentAttendanceReport.aspx" />
+    <Content Include="Admin\TeacherReport.aspx" />
+    <Content Include="Admin\ViewStaff.aspx" />
+    <Content Include="Admin\StudentReport.aspx" />
+    <Content Include="Admin\ViewStudentsByAdmin.aspx" />
+    <Content Include="Admin\ViewTeachers.aspx" />
+    <Content Include="assets\css\bootstrap-theme.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\camera.css" />
+    <Content Include="assets\css\font-awesome.min.css" />
+    <Content Include="assets\css\isotope.css" />
+    <Content Include="assets\css\style.css" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\images\1.jpg" />
+    <Content Include="assets\images\1.png" />
+    <Content Include="assets\images\2.png" />
+    <Content Include="assets\images\3.png" />
+    <Content Include="assets\images\4.png" />
+    <Content Include="assets\images\about.jpg" />
+    <Content Include="assets\images\academicLogo.png" />
+    <Content Include="assets\images\admin\admin.PNG" />
+    <Content Include="assets\images\admin\adminBackground.jpg" />
+    <Content Include="assets\images\admin\admindashboard.PNG" />
+    <Content Include="assets\images\admin\attendance.PNG" />
+    <Content Include="assets\images\admin\Avatar.png" />
+    <Content Include="assets\images\admin\login.PNG" />
+    <Content Include="assets\images\arrow.png" />
+    <Content Include="assets\images\arrows.png" />
+    <Content Include="assets\images\bg.png" />
+    <Content Include="assets\images\bg_header.jpg" />
+    <Content Include="assets\images\blank.gif" />
+    <Content Include="assets\images\camera-loader.gif" />
+    <Content Include="assets\images\camera_skins.png" />
+    <Content Include="assets\images\favicon.png" />
+    <Content Include="assets\images\logo.jpg" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\news2.jpg" />
+    <Content Include="assets\images\news3.jpg" />
+    <Content Include="assets\images\news4.jpg" />
+    <Content Include="assets\images\photo-1.jpg" />
+    <Content Include="assets\images\photo-2.jpg" />
+    <Content Include="assets\images\photo-3.jpg" />
+    <Content Include="assets\images\photo-4.jpg" />
+    <Content Include="assets\images\playbutton.png" />
+    <Content Include="assets\images\portfolio\img1.jpg" />
+    <Content Include="assets\images\portfolio\img2.jpg" />
+    <Content Include="assets\images\portfolio\img3.jpg" />
+    <Content Include="assets\images\portfolio\img4.jpg" />
+    <Content Include="assets\images\portfolio\img5.jpg" />
+    <Content Include="assets\images\portfolio\img6.jpg" />
+    <Content Include="assets\images\portfolio\img7.jpg" />
+    <Content Include="assets\images\portfolio\img8.jpg" />
+    <Content Include="assets\images\portfolio\img9.jpg" />
+    <Content Include="assets\images\post_01.jpg" />
+    <Content Include="assets\images\slides\img1.jpg" />
+    <Content Include="assets\images\slides\img2.jpg" />
+    <Content Include="assets\images\slides\img3.jpg" />
+    <Content Include="assets\images\slides\thumbs\big_bunny_fake.jpg" />
+    <Content Include="assets\images\slides\thumbs\bridge.jpg" />
+    <Content Include="assets\images\slides\thumbs\header_bg.png" />
+    <Content Include="assets\images\slides\thumbs\leaf.jpg" />
+    <Content Include="assets\images\slides\thumbs\road.jpg" />
+    <Content Include="assets\images\slides\thumbs\sea.jpg" />
+    <Content Include="assets\images\slides\thumbs\shelter.jpg" />
+    <Content Include="assets\images\slides\thumbs\tree.jpg" />
+    <Content Include="assets\images\slides\thumbs\_notes\dwsync.xml" />
+    <Content Include="assets\images\slides\_notes\dwsync.xml" />
+    <Content Include="assets\images\staff\staffBackground.jpg" />
+    <Content Include="assets\images\staff\Avatar.png" />
+    <Content Include="assets\images\staff\staff.PNG" />
+    <Content Include="assets\images\teacher\Avatar.png" />
+    <Content Include="assets\images\teacher\teacherBackground.jpg" />
+    <Content Include="assets\images\teacher\teacherdashboard.PNG" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\camera.min.js" />
+    <Content Include="assets\js\custom.js" />
+    <Content Include="assets\js\fancybox\blank.gif" />
+    <Content Include="assets\js\fancybox\fancybox_loading.gif" />
+    <Content Include="assets\js\fancybox\fancybox_loading_402x.gif" />
+    <Content Include="assets\js\fancybox\fancybox_overlay.png" />
+    <Content Include="assets\js\fancybox\fancybox_sprite.png" />
+    <Content Include="assets\js\fancybox\fancybox_sprite_402x.png" />
+    <Content Include="assets\js\fancybox\jquery.fancybox.css" />
+    <Content Include="assets\js\fancybox\jquery.fancybox.pack.js" />
+    <Content Include="assets\js\google-map.js" />
+    <Content Include="assets\js\html5shiv.js" />
+    <Content Include="assets\js\jquery.cslider.js" />
+    <Content Include="assets\js\jquery.easing.1.3.js" />
+    <Content Include="assets\js\jquery.isotope.min.js" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\jquery.mobile.customized.min.js" />
+    <Content Include="assets\js\modernizr-latest.js" />
+    <Content Include="assets\js\respond.min.js" />
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\Antlr3.Runtime.pdb" />
+    <Content Include="bin\InformaticsStudentAttendenceSystem.dll" />
+    <Content Include="bin\InformaticsStudentAttendenceSystem.pdb" />
+    <Content Include="bin\Microsoft.AspNet.FriendlyUrls.dll" />
+    <Content Include="bin\Microsoft.AspNet.FriendlyUrls.xml" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.xml" />
+    <Content Include="bin\Microsoft.AspNet.TelemetryCorrelation.dll" />
+    <Content Include="bin\Microsoft.AspNet.TelemetryCorrelation.xml" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\Newtonsoft.Json.pdb" />
+    <Content Include="bin\Newtonsoft.Json.xml" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\csi.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
+    <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
+    <Content Include="bin\roslyn\System.AppContext.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Console.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
+    <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
+    <Content Include="bin\roslyn\System.IO.Compression.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.IO.Pipes.AccessControl.dll" />
+    <Content Include="bin\roslyn\System.IO.Pipes.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\System.Security.AccessControl.dll" />
+    <Content Include="bin\roslyn\System.Security.Claims.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
+    <Content Include="bin\roslyn\System.Security.Principal.Windows.dll" />
+    <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
+    <Content Include="bin\roslyn\System.ValueTuple.dll" />
+    <Content Include="bin\roslyn\System.Xml.ReaderWriter.dll" />
+    <Content Include="bin\roslyn\System.Xml.XmlDocument.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.dll" />
+    <Content Include="bin\roslyn\System.Xml.XPath.XDocument.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\System.Diagnostics.DiagnosticSource.dll" />
+    <Content Include="bin\System.Diagnostics.DiagnosticSource.xml" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Optimization.xml" />
+    <Content Include="bin\WebGrease.dll" />
+    <Content Include="contact.aspx" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="courses.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="index.aspx" />
+    <Content Include="obj\Debug\InformaticsStudentAttendenceSystem.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\InformaticsStudentAttendenceSystem.dll" />
+    <Content Include="obj\Debug\InformaticsStudentAttendenceSystem.pdb" />
+    <Content Include="packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll" />
+    <Content Include="packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.pdb" />
+    <Content Include="packages\AspNet.ScriptManager.bootstrap.3.3.7\lib\net40\AspNet.ScriptManager.bootstrap.dll" />
+    <Content Include="packages\AspNet.ScriptManager.bootstrap.3.3.7\lib\net45\AspNet.ScriptManager.bootstrap.dll" />
+    <Content Include="packages\AspNet.ScriptManager.bootstrap.4.3.1\lib\net40\AspNet.ScriptManager.bootstrap.dll" />
+    <Content Include="packages\AspNet.ScriptManager.bootstrap.4.3.1\lib\net45\AspNet.ScriptManager.bootstrap.dll" />
+    <Content Include="packages\AspNet.ScriptManager.jQuery.3.3.1\lib\net40\AspNet.ScriptManager.jQuery.dll" />
+    <Content Include="packages\AspNet.ScriptManager.jQuery.3.3.1\lib\net45\AspNet.ScriptManager.jQuery.dll" />
+    <Content Include="packages\bootstrap.3.3.7\content\Content\bootstrap-theme.css" />
+    <Content Include="packages\bootstrap.3.3.7\content\Content\bootstrap-theme.min.css" />
+    <Content Include="packages\bootstrap.3.3.7\content\Content\bootstrap.css" />
+    <Content Include="packages\bootstrap.3.3.7\content\Content\bootstrap.min.css" />
+    <Content Include="packages\bootstrap.3.3.7\content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="packages\bootstrap.3.3.7\content\Scripts\bootstrap.js" />
+    <Content Include="packages\bootstrap.3.3.7\content\Scripts\bootstrap.min.js" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap-grid.css" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap-grid.min.css" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap-reboot.css" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap-reboot.min.css" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap.css" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap.min.css" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Scripts\bootstrap.bundle.js" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Scripts\bootstrap.bundle.min.js" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Scripts\bootstrap.js" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Scripts\bootstrap.min.js" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap-grid.css" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap-grid.min.css" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap-reboot.css" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap-reboot.min.css" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap.css" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap.min.css" />
+    <Content Include="packages\bootstrap.4.3.1\content\Scripts\bootstrap.bundle.js" />
+    <Content Include="packages\bootstrap.4.3.1\content\Scripts\bootstrap.bundle.min.js" />
+    <Content Include="packages\bootstrap.4.3.1\content\Scripts\bootstrap.js" />
+    <Content Include="packages\bootstrap.4.3.1\content\Scripts\bootstrap.min.js" />
+    <Content Include="packages\bootstrap.4.3.1\LICENSE.txt" />
+    <None Include="packages\jQuery.3.3.1\Content\Scripts\jquery-3.3.1-vsdoc.js" />
+    <Content Include="packages\jQuery.3.3.1\Content\Scripts\jquery-3.3.1.js" />
+    <Content Include="packages\jQuery.3.3.1\Content\Scripts\jquery-3.3.1.min.js" />
+    <Content Include="packages\jQuery.3.3.1\Content\Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="packages\jQuery.3.3.1\Content\Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="packages\jQuery.3.3.1\Tools\jquery-3.3.1.intellisense.js" />
+    <Content Include="packages\Microsoft.AspNet.FriendlyUrls.1.0.2\readme.txt" />
+    <Content Include="packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net40\Microsoft.AspNet.FriendlyUrls.dll" />
+    <Content Include="packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net40\Microsoft.AspNet.FriendlyUrls.xml" />
+    <Content Include="packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll" />
+    <Content Include="packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.xml" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\content\Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\DetailsView.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\Focus.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\GridView.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\Menu.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\MenuStandards.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\SmartNav.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\TreeView.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\WebForms.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\WebParts.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\content\Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll" />
+    <Content Include="packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll" />
+    <Content Include="packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.xml" />
+    <Content Include="packages\Microsoft.AspNet.TelemetryCorrelation.1.0.5\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll" />
+    <Content Include="packages\Microsoft.AspNet.TelemetryCorrelation.1.0.5\lib\net45\Microsoft.AspNet.TelemetryCorrelation.xml" />
+    <Content Include="packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll" />
+    <Content Include="packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\system.web.optimization.xml" />
+    <Content Include="packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="StaffImg\Avatar.png" />
+    <Content Include="Staff\AbsentStudentAttendanceReport.aspx" />
+    <Content Include="Staff\AddGroup.aspx" />
+    <Content Include="Staff\AddStudent.aspx" />
+    <Content Include="Staff\AddTeacher.aspx" />
+    <Content Include="Staff\AddTimeTable.aspx" />
+    <Content Include="Staff\AddYear.aspx" />
+    <Content Include="Staff\Course.aspx" />
+    <Content Include="Staff\Default.aspx" />
+    <Content Include="Staff\IndividualStudentAttendanceReport.aspx" />
+    <Content Include="Staff\Module.aspx" />
+    <Content Include="Staff\PwdChange.aspx" />
+    <Content Include="Staff\stafflogin.aspx" />
+    <Content Include="Staff\stafflogin.css" />
+    <Content Include="Staff\StaffMaster.css" />
+    <Content Include="Staff\StudentAttendanceReports.aspx" />
+    <Content Include="Staff\StudentReport.aspx" />
+    <Content Include="Staff\ViewStudent.aspx" />
+    <Content Include="Staff\ViewTeacher.aspx" />
+    <Content Include="Teacher\AbsentReport.aspx" />
+    <Content Include="Teacher\Attendance.aspx" />
+    <Content Include="Teacher\AttendanceReport.aspx" />
+    <Content Include="Teacher\Default.aspx" />
+    <Content Include="Teacher\passwordChange.aspx" />
+    <Content Include="Teacher\StudentIndividualReport.aspx" />
+    <Content Include="Teacher\Teacher.css" />
+    <Content Include="Teacher\teacherlogin.css" />
+    <Content Include="Teacher\teacherLogin.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="about.aspx.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="about.aspx.designer.cs">
+      <DependentUpon>about.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AbsentAttendanceReport.aspx.cs">
+      <DependentUpon>AbsentAttendanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AbsentAttendanceReport.aspx.designer.cs">
+      <DependentUpon>AbsentAttendanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddCoursesByAdmin.aspx.cs">
+      <DependentUpon>AddCoursesByAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddCoursesByAdmin.aspx.designer.cs">
+      <DependentUpon>AddCoursesByAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddGroupByAdmin.aspx.cs">
+      <DependentUpon>AddGroupByAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddGroupByAdmin.aspx.designer.cs">
+      <DependentUpon>AddGroupByAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddModulesByAdmin.aspx.cs">
+      <DependentUpon>AddModulesByAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddModulesByAdmin.aspx.designer.cs">
+      <DependentUpon>AddModulesByAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddStaff.aspx.cs">
+      <DependentUpon>AddStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddStaff.aspx.designer.cs">
+      <DependentUpon>AddStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddStudentsByAdmin.aspx.cs">
+      <DependentUpon>AddStudentsByAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddStudentsByAdmin.aspx.designer.cs">
+      <DependentUpon>AddStudentsByAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddTeachersByAdmin.aspx.cs">
+      <DependentUpon>AddTeachersByAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddTeachersByAdmin.aspx.designer.cs">
+      <DependentUpon>AddTeachersByAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AddYearByAdmin.aspx.cs">
+      <DependentUpon>AddYearByAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AddYearByAdmin.aspx.designer.cs">
+      <DependentUpon>AddYearByAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\adminLogin.aspx.cs">
+      <DependentUpon>adminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\adminLogin.aspx.designer.cs">
+      <DependentUpon>adminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\IndividualAttendanceReport.aspx.cs">
+      <DependentUpon>IndividualAttendanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\IndividualAttendanceReport.aspx.designer.cs">
+      <DependentUpon>IndividualAttendanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\StudentAttendanceReport.aspx.cs">
+      <DependentUpon>StudentAttendanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\StudentAttendanceReport.aspx.designer.cs">
+      <DependentUpon>StudentAttendanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\TeacherReport.aspx.cs">
+      <DependentUpon>TeacherReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\TeacherReport.aspx.designer.cs">
+      <DependentUpon>TeacherReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewStaff.aspx.cs">
+      <DependentUpon>ViewStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewStaff.aspx.designer.cs">
+      <DependentUpon>ViewStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\StudentReport.aspx.cs">
+      <DependentUpon>StudentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\StudentReport.aspx.designer.cs">
+      <DependentUpon>StudentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewStudentsByAdmin.aspx.cs">
+      <DependentUpon>ViewStudentsByAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewStudentsByAdmin.aspx.designer.cs">
+      <DependentUpon>ViewStudentsByAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewTeachers.aspx.cs">
+      <DependentUpon>ViewTeachers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewTeachers.aspx.designer.cs">
+      <DependentUpon>ViewTeachers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="contact.aspx.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="contact.aspx.designer.cs">
+      <DependentUpon>contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="courses.aspx.cs">
+      <DependentUpon>courses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="courses.aspx.designer.cs">
+      <DependentUpon>courses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\AbsentStudentAttendanceReport.aspx.cs">
+      <DependentUpon>AbsentStudentAttendanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\AbsentStudentAttendanceReport.aspx.designer.cs">
+      <DependentUpon>AbsentStudentAttendanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\AddGroup.aspx.cs">
+      <DependentUpon>AddGroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\AddGroup.aspx.designer.cs">
+      <DependentUpon>AddGroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\AddStudent.aspx.cs">
+      <DependentUpon>AddStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\AddStudent.aspx.designer.cs">
+      <DependentUpon>AddStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\AddTeacher.aspx.cs">
+      <DependentUpon>AddTeacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\AddTeacher.aspx.designer.cs">
+      <DependentUpon>AddTeacher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\AddTimeTable.aspx.cs">
+      <DependentUpon>AddTimeTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\AddTimeTable.aspx.designer.cs">
+      <DependentUpon>AddTimeTable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\AddYear.aspx.cs">
+      <DependentUpon>AddYear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\AddYear.aspx.designer.cs">
+      <DependentUpon>AddYear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Course.aspx.cs">
+      <DependentUpon>Course.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\Course.aspx.designer.cs">
+      <DependentUpon>Course.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\IndividualStudentAttendanceReport.aspx.cs">
+      <DependentUpon>IndividualStudentAttendanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\IndividualStudentAttendanceReport.aspx.designer.cs">
+      <DependentUpon>IndividualStudentAttendanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Module.aspx.cs">
+      <DependentUpon>Module.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\Module.aspx.designer.cs">
+      <DependentUpon>Module.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\PwdChange.aspx.cs">
+      <DependentUpon>PwdChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\PwdChange.aspx.designer.cs">
+      <DependentUpon>PwdChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\Staff.Master.cs">
+      <DependentUpon>Staff.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\Staff.Master.designer.cs">
+      <DependentUpon>Staff.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\stafflogin.aspx.cs">
+      <DependentUpon>stafflogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\stafflogin.aspx.designer.cs">
+      <DependentUpon>stafflogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\StudentAttendanceReports.aspx.cs">
+      <DependentUpon>StudentAttendanceReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\StudentAttendanceReports.aspx.designer.cs">
+      <DependentUpon>StudentAttendanceReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\StudentReport.aspx.cs">
+      <DependentUpon>StudentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\StudentReport.aspx.designer.cs">
+      <DependentUpon>StudentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\ViewStudent.aspx.cs">
+      <DependentUpon>ViewStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\ViewStudent.aspx.designer.cs">
+      <DependentUpon>ViewStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\ViewTeacher.aspx.cs">
+      <DependentUpon>ViewTeacher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\ViewTeacher.aspx.designer.cs">
+      <DependentUpon>ViewTeacher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\AbsentReport.aspx.cs">
+      <DependentUpon>AbsentReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher\AbsentReport.aspx.designer.cs">
+      <DependentUpon>AbsentReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\Attendance.aspx.cs">
+      <DependentUpon>Attendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher\Attendance.aspx.designer.cs">
+      <DependentUpon>Attendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\AttendanceReport.aspx.cs">
+      <DependentUpon>AttendanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher\AttendanceReport.aspx.designer.cs">
+      <DependentUpon>AttendanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\passwordChange.aspx.cs">
+      <DependentUpon>passwordChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher\passwordChange.aspx.designer.cs">
+      <DependentUpon>passwordChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\StudentIndividualReport.aspx.cs">
+      <DependentUpon>StudentIndividualReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher\StudentIndividualReport.aspx.designer.cs">
+      <DependentUpon>StudentIndividualReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\Teacher.Master.cs">
+      <DependentUpon>Teacher.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher\Teacher.Master.designer.cs">
+      <DependentUpon>Teacher.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Teacher\teacherLogin.aspx.cs">
+      <DependentUpon>teacherLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Teacher\teacherLogin.aspx.designer.cs">
+      <DependentUpon>teacherLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\js\fancybox\Descr.WD3" />
+    <Content Include="Admin\Admin.Master" />
+    <Content Include="bin\InformaticsStudentAttendenceSystem.dll.config" />
+    <Content Include="bin\roslyn\csc.exe.config" />
+    <Content Include="bin\roslyn\csc.rsp" />
+    <Content Include="bin\roslyn\csi.exe.config" />
+    <Content Include="bin\roslyn\csi.rsp" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.Managed.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\vbc.exe.config" />
+    <Content Include="bin\roslyn\vbc.rsp" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\InformaticsStudentAttendenceSystem.csproj.CopyComplete" />
+    <Content Include="obj\Debug\InformaticsStudentAttendenceSystem.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\InformaticsStudentAttendenceSystem.csprojAssemblyReference.cache" />
+    <Content Include="obj\Debug\WebApp.csproj.CoreCompileInputs.cache" />
+    <Content Include="obj\Debug\WebApp.csprojAssemblyReference.cache" />
+    <Content Include="obj\Release\WebApp.csproj.CoreCompileInputs.cache" />
+    <None Include="packages.config" />
+    <Content Include="Site1.Master" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="packages\Antlr.3.5.0.2\.signature.p7s" />
+    <Content Include="packages\Antlr.3.5.0.2\Antlr.3.5.0.2.nupkg" />
+    <Content Include="packages\AspNet.ScriptManager.bootstrap.3.3.7\AspNet.ScriptManager.bootstrap.3.3.7.nupkg" />
+    <Content Include="packages\AspNet.ScriptManager.bootstrap.4.3.1\.signature.p7s" />
+    <Content Include="packages\AspNet.ScriptManager.bootstrap.4.3.1\AspNet.ScriptManager.bootstrap.4.3.1.nupkg" />
+    <Content Include="packages\AspNet.ScriptManager.jQuery.3.3.1\.signature.p7s" />
+    <Content Include="packages\AspNet.ScriptManager.jQuery.3.3.1\AspNet.ScriptManager.jQuery.3.3.1.nupkg" />
+    <Content Include="packages\bootstrap.3.3.7\bootstrap.3.3.7.nupkg" />
+    <Content Include="packages\bootstrap.3.3.7\content\Content\bootstrap-theme.css.map" />
+    <Content Include="packages\bootstrap.3.3.7\content\Content\bootstrap-theme.min.css.map" />
+    <Content Include="packages\bootstrap.3.3.7\content\Content\bootstrap.css.map" />
+    <Content Include="packages\bootstrap.3.3.7\content\Content\bootstrap.min.css.map" />
+    <Content Include="packages\bootstrap.3.3.7\content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages\bootstrap.3.3.7\content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="packages\bootstrap.3.3.7\content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="packages\bootstrap.3.3.7\content\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="packages\bootstrap.4.3.1\.signature.p7s" />
+    <Content Include="packages\bootstrap.4.3.1\bootstrap.4.3.1.nupkg" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap-grid.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap-grid.min.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap-reboot.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap-reboot.min.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Content\bootstrap.min.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Scripts\bootstrap.bundle.js.map" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Scripts\bootstrap.js.map" />
+    <Content Include="packages\bootstrap.4.3.1\contentFiles\Scripts\bootstrap.min.js.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap-grid.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap-grid.min.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap-reboot.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap-reboot.min.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Content\bootstrap.min.css.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Scripts\bootstrap.bundle.js.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Scripts\bootstrap.js.map" />
+    <Content Include="packages\bootstrap.4.3.1\content\Scripts\bootstrap.min.js.map" />
+    <Content Include="packages\jQuery.3.3.1\.signature.p7s" />
+    <Content Include="packages\jQuery.3.3.1\Content\Scripts\jquery-3.3.1.min.map" />
+    <Content Include="packages\jQuery.3.3.1\Content\Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="packages\jQuery.3.3.1\jQuery.3.3.1.nupkg" />
+    <Content Include="packages\jQuery.3.3.1\Tools\common.ps1" />
+    <Content Include="packages\jQuery.3.3.1\Tools\install.ps1" />
+    <Content Include="packages\jQuery.3.3.1\Tools\uninstall.ps1" />
+    <Content Include="packages\Microsoft.AspNet.FriendlyUrls.1.0.2\.signature.p7s" />
+    <Content Include="packages\Microsoft.AspNet.FriendlyUrls.1.0.2\Content\App_Start\RouteConfig.cs.pp" />
+    <Content Include="packages\Microsoft.AspNet.FriendlyUrls.1.0.2\Content\Site.Mobile.Master.cs.pp" />
+    <Content Include="packages\Microsoft.AspNet.FriendlyUrls.1.0.2\Content\Site.Mobile.Master.designer.cs.pp" />
+    <Content Include="packages\Microsoft.AspNet.FriendlyUrls.1.0.2\Content\Site.Mobile.Master.pp" />
+    <Content Include="packages\Microsoft.AspNet.FriendlyUrls.1.0.2\Content\ViewSwitcher.ascx.cs.pp" />
+    <Content Include="packages\Microsoft.AspNet.FriendlyUrls.1.0.2\Content\ViewSwitcher.ascx.designer.cs.pp" />
+    <Content Include="packages\Microsoft.AspNet.FriendlyUrls.1.0.2\Content\ViewSwitcher.ascx.pp" />
+    <Content Include="packages\Microsoft.AspNet.FriendlyUrls.1.0.2\Microsoft.AspNet.FriendlyUrls.1.0.2.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\.signature.p7s" />
+    <Content Include="packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\Microsoft.AspNet.FriendlyUrls.Core.1.0.2.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\.signature.p7s" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\.signature.p7s" />
+    <Content Include="packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\Microsoft.AspNet.ScriptManager.WebForms.5.0.0.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\content\net45\web.config.install.xdt" />
+    <Content Include="packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\content\net45\web.config.uninstall.xdt" />
+    <Content Include="packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\Microsoft.AspNet.TelemetryCorrelation.1.0.0.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.TelemetryCorrelation.1.0.5\.signature.p7s" />
+    <Content Include="packages\Microsoft.AspNet.TelemetryCorrelation.1.0.5\content\web.config.install.xdt" />
+    <Content Include="packages\Microsoft.AspNet.TelemetryCorrelation.1.0.5\content\web.config.uninstall.xdt" />
+    <Content Include="packages\Microsoft.AspNet.TelemetryCorrelation.1.0.5\Microsoft.AspNet.TelemetryCorrelation.1.0.5.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.Web.Optimization.1.1.3\.signature.p7s" />
+    <Content Include="packages\Microsoft.AspNet.Web.Optimization.1.1.3\Microsoft.AspNet.Web.Optimization.1.1.3.nupkg" />
+    <Content Include="packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\.signature.p7s" />
+    <Content Include="packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\content\web.config.transform" />
+    <Content Include="packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3.nupkg" />
+    <Content Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\.signature.p7s" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Staff\Staff.Master" />
+    <Content Include="Teacher\Teacher.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49811</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49811/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

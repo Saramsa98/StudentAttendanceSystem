@@ -22,10 +22,55 @@ namespace InformaticsStudentAttendenceSystem
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
+
             // create database
             CreateDatabase();
 
-            //create tables
+            //calling the TableCreation function
+            TableCreation();
+
+
+            //insert data
+            AddAdminInfo();
+        }
+        
+
+        public void TableCreation()
+        {
+            //calling the CreateTableAdmin function
+            CreateTableAdmin();
+
+            //calling the CreateTableCourse function
+            CreateTableCourse();
+
+            //calling the CreateTableModule function
+            CreateTableModule();
+
+            //calling the CreateTableStaff function
+            CreateTableStaff();
+
+            //calling the CreateTableTeacher function
+            CreateTableTeacher();
+
+            //calling the CreateTableYear function
+            CreateTableYear();
+
+            //calling the CreateTableGroup function
+            CreateTableGroup();
+
+            //calling the CreateTableTimeTable function
+            CreateTableTimeTable();
+
+            //calling the CreateTableStudent function
+            CreateTableStudent();
+
+            //calling the CreateTableAttendance function
+            CreateTableAttendance();
+        }
+
+        //creating table admin
+        public void CreateTableAdmin()
+        {
             CreateTable(@"IF NOT EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'tblAdmin')
                 CREATE TABLE tblAdmin
                 (
@@ -33,6 +78,38 @@ namespace InformaticsStudentAttendenceSystem
 	                Username VARCHAR(50),
 	                Password VARCHAR(50)
                 )");
+
+        }
+
+
+        //creating table course
+        public void CreateTableCourse()
+        {
+            CreateTable(@"IF NOT EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'tblCourse')
+                CREATE TABLE tblCourse
+                (
+	                Id INT PRIMARY KEY IDENTITY(1,1),
+	                CourseCode VARCHAR(50),
+	                CourseName VARCHAR(50)
+                )");
+        }
+
+        //creating table module
+        public void CreateTableModule()
+        {
+            CreateTable(@"IF NOT EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'tblModule')
+                CREATE TABLE tblModule
+                (
+	                Id INT PRIMARY KEY IDENTITY(1,1),
+	                CourseName VARCHAR(50),
+	                ModuleCode VARCHAR(50),
+	                ModuleName VARCHAR(50)
+                )");
+        }
+
+        //creating table staff
+        public void CreateTableStaff()
+        {
             CreateTable(@"IF NOT EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'tblStaff')
                 CREATE TABLE tblStaff
                 (
@@ -43,12 +120,117 @@ namespace InformaticsStudentAttendenceSystem
                     [Qualification] VARCHAR(50) NOT NULL, 
                     [Address] VARCHAR(50) NOT NULL, 
                     [Gender] VARCHAR(10) NOT NULL, 
-                    [Photo] NVARCHAR(250) NULL, 
                     [Username] VARCHAR(20) NOT NULL, 
                     [Password] VARCHAR(20) NOT NULL 
                 )");
-            //insert data
-            AddAdminInfo();
+        }
+
+        //creating table teacher
+        public void CreateTableTeacher()
+        {
+            CreateTable(@"IF NOT EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'tblTeacher')
+                CREATE TABLE tblTeacher
+                (
+	                [TeacherId] INT NOT NULL PRIMARY KEY IDENTITY(1,1), 
+                    [TeacherName] VARCHAR(50) NOT NULL, 
+                    [Mobile] VARCHAR(10) NOT NULL, 
+                    [Email] VARCHAR(50) NOT NULL, 
+                    [DOB] VARCHAR(50) NOT NULL, 
+                    [Qualification] VARCHAR(50) NOT NULL, 
+                    [Address] VARCHAR(50) NOT NULL, 
+                    [Gender] VARCHAR(10) NOT NULL, 
+                    [ModuleAssigned] VARCHAR(50) NOT NULL, 
+                    [TeacherType] VARCHAR(10) NOT NULL, 
+                    [TeachingHrs] VARCHAR(10) NOT NULL, 
+                    [Username] VARCHAR(20) NOT NULL, 
+                    [Password] VARCHAR(20) NOT NULL 
+                )");
+
+        }
+
+        //creating table year
+        public void CreateTableYear()
+        {
+            CreateTable(@"IF NOT EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'tblYear')
+                CREATE TABLE tblYear
+                (
+	                Id INT PRIMARY KEY IDENTITY(1,1),
+	                Year VARCHAR(50),
+	                Semester VARCHAR(50)
+                )");
+        }
+
+        //creating table group
+        public void CreateTableGroup()
+        {
+            CreateTable(@"IF NOT EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'tblGroup')
+                CREATE TABLE tblGroup
+                (
+	                Id INT PRIMARY KEY IDENTITY(1,1),
+	                GroupName VARCHAR(50),
+	                Year VARCHAR(50)
+                )");
+
+        }
+
+        public void CreateTableTimeTable()
+        {
+            CreateTable(@"IF NOT EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'tblTimeTable')
+                CREATE TABLE tblTimeTable
+                (
+	                 Id INT PRIMARY KEY IDENTITY(1,1),
+	                 Day VARCHAR(50),
+                     Time VARCHAR(50),
+                     ClassType VARCHAR(50),
+                     Year VARCHAR(50),
+                     CourseName VARCHAR(50),
+                     Intake VARCHAR(50),
+                     ModuleCode VARCHAR(50),
+                     ModuleTitle VARCHAR(50),
+                     Lecturer VARCHAR(50),
+                     GroupName VARCHAR(50),
+                     Room VARCHAR(50)
+                )");
+
+        }
+
+        //creating table student
+        public void CreateTableStudent()
+        {
+            CreateTable(@"IF NOT EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'tblStudent')
+                CREATE TABLE tblStudent
+                (
+	                [StudentId] INT NOT NULL PRIMARY KEY, 
+                    [StudentName] VARCHAR(50) NOT NULL, 
+                    [Address] VARCHAR(50) NOT NULL, 
+                    [Mobile] VARCHAR(10) NOT NULL, 
+                    [Email] VARCHAR(50) NOT NULL, 
+                    [DOB] VARCHAR(50) NOT NULL, 
+                    [Gender] VARCHAR(10) NOT NULL, 
+                    [EnrollDate] VARCHAR(20) NOT NULL, 
+                    [CourseName] VARCHAR(50) NOT NULL, 
+                    [ModuleCode] VARCHAR(50) NOT NULL, 
+                    [Group] VARCHAR(20) NOT NULL, 
+                    [Year] VARCHAR(20) NOT NULL 
+                )");
+
+        }
+
+        //creating table student
+        public void CreateTableAttendance()
+        {
+            CreateTable(@"IF NOT EXISTS(SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'tblAttendance')
+                CREATE TABLE tblAttendance
+                (
+                   
+	                [StudentId] INT NOT NULL, 
+                    [StudentName] VARCHAR(50) NOT NULL, 
+                    [ModuleId] VARCHAR(50) NOT NULL, 
+                    [GroupName] VARCHAR(50) NOT NULL, 
+                    [Date] date NOT NULL, 
+                    [Status] VARCHAR(20) NOT NULL 
+                )");
+
         }
 
         public void CreateTable(string createStatement)
@@ -62,6 +244,7 @@ namespace InformaticsStudentAttendenceSystem
             }
         }
 
+        //inserting the admin info
         public void AddAdminInfo()
         {
             using (SqlConnection defaultConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnectionString"].ConnectionString))
@@ -77,6 +260,7 @@ namespace InformaticsStudentAttendenceSystem
             }
         }
 
+        //creation of database
         void CreateDatabase()
         {
             try
